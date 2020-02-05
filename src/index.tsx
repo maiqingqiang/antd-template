@@ -3,8 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Http from "./utils/http";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+Http.init();
+
+Http.get('http://localhost:3000', {}, {loading: true}).then(response => {
+    console.log(999, response);
+});
+
+ReactDOM.render(<App/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
