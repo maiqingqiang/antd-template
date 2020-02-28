@@ -4,10 +4,16 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Http from "./utils/http";
+import {isEnvProduction} from "./utils/common";
+import './mock/index';
+
+// if (!isEnvProduction) {
+//     require('./mock/index');
+// }
 
 Http.init();
 
-Http.get('http://localhost:3000', {}, {loading: true}).then(response => {
+Http.get('/api/test', {}, {loading: true}).then(response => {
     console.log(999, response);
 });
 

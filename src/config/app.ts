@@ -2,7 +2,7 @@ import * as env from 'env-var';
 
 export default {
     siteName: env.get('REACT_APP_SITE_NAME').default('后台管理系统'),
-    copyright: env.get('REACT_APP_COPYRIGHT').default('&copy; 2020 后台管理系统').asString(),
+    copyright: env.get('REACT_APP_COPYRIGHT').default('2020 后台管理系统').asString(),
     layouts: [
         {
             name: 'primary',

@@ -6,6 +6,7 @@ import {UserOutlined, LaptopOutlined, NotificationOutlined} from '@ant-design/ic
 import Texty from 'rc-texty';
 import 'rc-texty/assets/index.css';
 import TweenOne from 'rc-tween-one';
+import app from "./config/app";
 
 const {
     Header, Content,
@@ -213,6 +214,7 @@ const App: React.FC = () => {
                             </div>
                         </div>
                     </Content>
+                    <Footer className='footer'>&copy;{app.copyright}</Footer>
                 </Layout>
             </Layout>
         </Layout>
