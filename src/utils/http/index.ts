@@ -1,6 +1,6 @@
 import axios, {AxiosRequestConfig, AxiosResponse} from 'axios';
-import {message} from "antd";
-import {MessageType} from "antd/lib/message";
+import {message} from 'antd';
+import {MessageType} from 'antd/lib/message';
 
 export interface HttpRequestConfig extends AxiosRequestConfig {
     loading?: boolean
@@ -16,7 +16,8 @@ export interface HttpOptions {
 let loading: MessageType;
 
 /**
- * Http Class
+ * 网络请求 Http Class
+ * @author John Mai
  */
 class Http {
     options: HttpOptions = {
