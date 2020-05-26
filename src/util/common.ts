@@ -4,6 +4,7 @@
  */
 
 
+
 /**
  * 获取 env 环境变量
  * @param key               变量名称
@@ -39,8 +40,16 @@ export const isExternal = (path: string) => /^(https?:|mailto:|tel:)/.test(path)
 /**
  * 逐级分割 path
  * @param url
+ * @return string[]
  */
 export const splitPath = (url: string) => {
     const splited = url.split('/').filter(i => i);
     return splited.map((item, index) => `/${splited.slice(0, index + 1).join('/')}`);
 };
+
+/**
+ * 延迟
+ * @param ms
+ */
+export const delay = (ms: number) =>
+    new Promise(resolve => setTimeout(resolve, ms));

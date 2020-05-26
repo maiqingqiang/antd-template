@@ -1,17 +1,18 @@
 import React, {lazy} from "react";
-import {Options} from "~/types/router";
-import Layout from "~/components/layouts";
+import {Options} from "~/type/router";
+import Layout from "~/component/layouts";
 import {HomeOutlined} from '@ant-design/icons';
 import {Outlet} from 'react-router-dom';
+import Login from '~/page/login';
 
-const Home = lazy(() => import('~/pages/home'));
+const Home = lazy(() => import('~/page/home'));
 
 const routes: Options[] = [
     {
         path: '/',
         hidden: true,
         module: true,
-        // redirect:'/home',
+        // redirect: '/home',
         alway: false,
         element: <Layout/>,
         mate: {
@@ -25,7 +26,7 @@ const routes: Options[] = [
         subRoutes: [
             {
                 path: '/home',
-                element: <div>22222</div>,
+                element: <Home/>,
                 mate: {
                     title: '首页',
                     icon: <HomeOutlined/>
@@ -64,15 +65,69 @@ const routes: Options[] = [
                 ]
             },
         ]
-    },
-    {
+    }, {
+        path: '/test',
+        hidden: true,
+        module: false,
+        alway: false,
+        element: <Layout/>,
+        mate: {
+            title: '测试',
+            permission: [],
+            role: [],
+            icon: <HomeOutlined/>,
+            breadcrumb: false,
+            auth: false
+        },
+        subRoutes: [
+            {
+                path: '/home2',
+                element: <div>22222</div>,
+                mate: {
+                    title: '首页2',
+                    icon: <HomeOutlined/>
+                }
+            },
+            {
+                path: '/home233',
+                element: <div>22222</div>,
+                mate: {
+                    title: '首页223',
+                    icon: <HomeOutlined/>
+                }
+            },
+            {
+                path: '/home234',
+                element: <Outlet/>,
+                mate: {
+                    title: '首页22334',
+                    icon: <HomeOutlined/>
+                },
+                subRoutes: [
+                    {
+                        path: '/home4',
+                        element: <Outlet/>,
+                        mate: {
+                            title: '4444546'
+                        },
+                        subRoutes: [{
+                            path: '/home6',
+                            element: <div>6666666</div>,
+                            mate: {
+                                title: '441114664'
+                            }
+                        }]
+                    }
+                ]
+            },
+        ]
+    }, {
         path: '/login',
-        element: <div>login</div>,
+        element: <Login/>,
         mate: {
             title: '登录'
         }
-    },
-    {
+    }, {
         path: '*',
         element: <div>Not found</div>,
         mate: {

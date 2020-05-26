@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import {useEffect, useRef, useState} from 'react'
 
 /**
  * 节流
@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react'
  * @param deps      依赖
  * @author  John Mai
  */
-const useThrottle = (fn:Function, ms = 30, deps = []) => {
+const useThrottle = (fn: Function, ms = 30, deps = []) => {
     let previous = useRef(0);
     let [time, setTime] = useState(ms);
     useEffect(() => {

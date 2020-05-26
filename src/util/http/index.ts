@@ -20,11 +20,10 @@ let loading: MessageType;
  * @author John Mai
  */
 class Http {
+    private static instance: Http;
     options: HttpOptions = {
         maxAge: 0,
     };
-
-    private static instance: Http;
 
     constructor(options?: HttpOptions) {
         this.options = {

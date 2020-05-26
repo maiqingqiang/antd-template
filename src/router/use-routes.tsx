@@ -1,7 +1,7 @@
 import React, {FC, useEffect} from "react";
 import {Route, Routes, useLocation, useNavigate} from 'react-router-dom';
-import {Options} from "~/types/router";
-import {isExternal} from "~/utils/common";
+import {Options} from "~/type/router";
+import {isExternal} from "~/util/common";
 import app from "~/config/app";
 
 export const RouteContext = React.createContext<{ route: Options | any }>({route: {}});

@@ -1,7 +1,6 @@
 /// <reference types="node" />
 /// <reference types="react" />
 /// <reference types="react-dom" />
-/// <reference types="react-router-dom" />
 
 declare namespace NodeJS {
     interface ProcessEnv {
@@ -43,7 +42,9 @@ declare module '*.webp' {
 declare module '*.svg' {
     import * as React from 'react';
 
-    export const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement> & { title?: string }>;
+  export const ReactComponent: React.FunctionComponent<React.SVGProps<
+    SVGSVGElement
+  > & { title?: string }>;
 
     const src: string;
     export default src;
@@ -64,6 +65,6 @@ declare module '*.module.sass' {
     export default classes;
 }
 
-// TODO: v6 还没发 暂时过滤掉声明
-declare module 'react-router-dom';
-declare module 'react-router';
+// TODO: react-router v6 还没release 暂时过滤掉声明
+// declare module 'react-router-dom';
+// declare module 'react-router';

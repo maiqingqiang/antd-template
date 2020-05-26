@@ -159,7 +159,7 @@ module.exports = function (webpackEnv) {
             // require.resolve('webpack-dev-server/client') + '?/',
             // require.resolve('webpack/hot/dev-server'),
             isEnvDevelopment &&
-            require.resolve('react-dev-utils/webpackHotDevClient'),
+        require.resolve('react-dev-utils/webpackHotDevClient'),
             // Finally, this is your app's code:
             paths.appIndexJs,
             // We include the app code last so that if there is a runtime error during
@@ -342,7 +342,7 @@ module.exports = function (webpackEnv) {
                         {
                             options: {
                                 cache: true,
-                                formatter: require.resolve('react-dev-utils/eslintFormatter'),
+                formatter: require.resolve('react-dev-utils/eslintFormatter'),
                                 eslintPath: require.resolve('eslint'),
                                 resolvePluginsRelativeTo: __dirname,
 
@@ -634,7 +634,7 @@ module.exports = function (webpackEnv) {
             }),
             // Moment.js is an extremely popular library that bundles large locale files
             // by default due to how webpack interprets its code. This is a practical
-            // solution that requires the user to opt into importing specific locales.
+            // solution that requires the user to opt into importing specific locale.
             // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
             // You can remove this if you don't use Moment.js:
             new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
