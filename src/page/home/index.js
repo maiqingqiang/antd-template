@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "~/store";
-import {useInRouterContext, useLocationPending} from 'react-router-dom';
+// import {useInRouterContext, useLocationPending} from 'react-router-dom';
 import {Table} from "antd";
 
 export default (props) => {
@@ -8,10 +8,10 @@ export default (props) => {
     const app = useSelector(state => state.app);
     const dispatch = useDispatch();
 
-    const routerContext = useInRouterContext();
-    const pending = useLocationPending();
-    console.log(9988, pending);
-    console.log(99, routerContext);
+    // const routerContext = useInRouterContext();
+    // const pending = useLocationPending();
+    // console.log(9988, pending);
+    // console.log(99, routerContext);
 
     const onclick = () => {
         console.log(app);

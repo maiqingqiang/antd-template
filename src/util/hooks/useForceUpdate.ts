@@ -5,7 +5,7 @@ import {useState} from 'react'
  * @author John Mai
  */
 const useForceUpdate = () => {
-    const [, setFlag] = useState();
+    const [, setFlag] = useState<number>();
     return () => {
         setFlag(Date.now());
     };

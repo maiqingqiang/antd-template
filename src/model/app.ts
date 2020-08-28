@@ -15,7 +15,7 @@ export default {
             return state;
         }
     },
-    effects: (dispatch: Dispatch) => ({
+    effects: (dispatch: Dispatch & any) => ({
         async setLoadingAsync() {
             await delay(2000);
             dispatch.app.setLoading();
